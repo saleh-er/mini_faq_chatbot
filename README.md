@@ -1,32 +1,35 @@
-# Mini FAQ Chatbot 🤖
+# Mini FAQ Chatbot with Groq 🤖
 
-A **simple FAQ chatbot** capable of answering frequently asked questions from a CSV dataset.  
-The project includes a **console version** and a **Streamlit web interface**, with conversation history management and environment variable configuration via `.env`.
+A **smart FAQ chatbot** that answers frequently asked questions from a CSV dataset and uses a **Groq LLM** for generating responses when no FAQ match is found.  
+This project includes a **console version** and a **Streamlit web interface** with conversation history and export functionality.
 
 ---
 
 ## **Features**
 
-- Automatic responses to frequently asked questions (FAQ)  
-- **Console** and **Streamlit web interface**  
-- Conversation history tracking  
-- Support for multiple questions in a single input (separated by `;`)  
-- Handles unknown questions with a default message  
-- Configurable via `.env`:
-  - CSV dataset path (`FAQ_PATH`)
-  - Similarity threshold (`SIMILARITY_THRESHOLD`)
-- Modular code structure (`core.py`, `utils.py`, `session.py`)
+- Automatic FAQ responses using **TF-IDF similarity**
+- Fallback to **Groq LLM** for unknown questions
+- **Console version** and **Streamlit web interface**
+- Conversation history tracking with **export to CSV**
+- Supports multiple questions per input
+- Configuration via `.env`:
+  - `FAQ_PATH` : path to CSV dataset
+  - `SIMILARITY_THRESHOLD` : threshold for FAQ matching
+  - `GROQ_API_KEY` : Groq API key
+  - `GROQ_MODEL` : Groq model to use
+- Modular code: `core_groq.py`, `llm.py`, `session.py`, `utils.py`
 
 ---
 
-## **Screenshot**
+## **Demo Screenshot**
 
+**
 
 ---
 
 ## **Installation**
 
-1. Clone the repository
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/YourUsername/mini-faq-chatbot.git
